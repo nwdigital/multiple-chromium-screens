@@ -4,6 +4,8 @@
 
 sleep 10;
 
+user="myusername";
+
 while true
 
 do
@@ -13,7 +15,7 @@ do
   GetTempDir()
   {
     rand=$(tr -cd '[:alnum:]' < /dev/urandom | fold -w20 | head -n1)
-    temp="/home/fcpadmin/chromium-tmp-$rand"
+    temp="/home/$user/chromium-tmp-$rand"
     mkdir $temp
   }
 
@@ -43,9 +45,9 @@ do
   }
 
   sites=(
-    "https://bclk.app/i/cc75a5e69d" # PRTG Top 10 Lists
-    "https://bclk.app/i/dcbbc6105b" # PRTG Crandon Overview
-    "https://bclk.app/i/119938b850" # Crandon vSphere - Overview
+    "https://yahoo.com"
+    "https://google.com"
+    "https://youtube.com"
   )
 
   sizes=(
@@ -55,9 +57,9 @@ do
   )
 
   dir=(
-    "/home/fcpadmin/chrome-1"
-    "/home/fcpadmin/chrome-2"
-    "/home/fcpadmin/chrome-3"
+    "/home/$user/chrome-1"
+    "/home/$user/chrome-2"
+    "/home/$user/chrome-3"
   )
 
   for ((i = 0; i < ${#sites[@]}; ++i)); do
